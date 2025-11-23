@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV – Ho Thi Bach Tuyet (Snow White)</title>
+
+<style>
+.avatar-box {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue-main: #0a6ad8;
+  --red-main: #e30613;
+  --text-main: #333333;
+  --grey-bg: #f1f1f1;
+  --line-grey: #dedede;
+  --light-blue-bg: #eef4fb;
+  --milk-bg: #f7f3ea;
+}
+
+* {box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  font-family:"Montserrat", system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--grey-bg);
+  color:var(--text-main);
+  line-height:1.5;
+}
+
+.portfolio-section {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.portfolio-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-section p {
+  font-size: 1rem;
+}
+
+.portfolio-section a {
+  text-decoration: underline;
+  color: #007BFF;
+  margin-left: 5px;
+}
+
+a {color:var(--blue-main);text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+.page {max-width:1920px;margin:0 auto;padding:40px 0 60px;}
+
+.cv-inner {
+  max-width:1260px;
+  margin:0 auto;
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,0.12);
+  border-top:6px solid var(--red-main);
+  padding-bottom:40px;
+}
+
+/* HEADER trái – phải */
+.container {
+  width:100%;
+  display:flex;
+  background:#fff;
+  border-bottom:1px solid var(--line-grey);
+}
+.left {width:40%;border-right:1px solid var(--line-grey);}
+.left img {width:100%;height:100%;object-fit:cover;display:block;}
+
+.right {width:60%;padding:36px 40px 30px;}
+.right h1 {margin:0;font-size:26px;letter-spacing:2px;}
+.blue-text {
+  color:#0090e3;
+  font-size:36px;
+  font-weight:800;
+  margin:6px 0 4px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+.name-red {
+  color:#d40000;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:20px;
+  line-height:1.3;
+  text-transform:uppercase;
+}
+.info-box {
+  display:flex;
+  margin:8px 0;
+  align-items:center;
+  font-size:14px;
+}
+.icon {
+  width:35px;
+  height:35px;
+  background:#d40000;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-right:10px;
+  font-size:18px;
+  border-radius:3px;
+}
+.description {
+  margin-top:24px;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ========= SKILLS – DÙNG FLEX, CỘT THẲNG HÀNG ========= */
+.skills-block {
+  padding:18px 28px 20px;
+  background:var(--light-blue-bg);
+  border-top:1px dashed var(--line-grey);
+  border-bottom:1px dashed var(--line-grey);
+}
+
+/* 3 cột: trái – giữa – phải */
+.skills-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.skills-row + .skills-row { margin-top:6px; } /* khoảng cách giữa các hàng */
+
+.skills-col {
+  flex:1;
+}
+
+/* canh chữ: trái / giữa / phải */
+.skills-col.left   { text-align:left; }
+.skills-col.center { text-align:center; }
+.skills-col.right  { text-align:center; } /* để Less experienced đứng ngay trên Pr */
+
+/* Hàng chữ trên cùng */
+.skills-row.labels { margin-bottom:2px; }
+
+.skills-row.labels .skills-col {
+  font-size:13px;
+  font-weight:600;
+  color:#6b6b6b;
+}
+
+.skills-row.labels .skills-col.left {
+  color:#0a6ad8;            /* Main màu xanh */
+  font-weight:700;
+}
+
+/* Hàng icon */
+.skills-row.icons .skills-col {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.skills-row.icons .skills-col.left {
+  justify-content:flex-start; /* cột trái đang trống, cứ để vậy */
+}
+
+.skills-logo {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  justify-content:center;
+}
+
+.skills-logo img,
+.skills-pr img,
+.skills-capcut img {
+  height:32px;
+  width:auto;
+  display:block;
+}
+
+/* Hàng chữ Outdated */
+.skills-row.sub-labels .skills-col {
+  font-size:13px;
+  font-weight:600;
+  color:#6b6b6b;  /* Outdated & Used but outdated đều xám */
+}
+
+/* Hàng CapCut */
+.skills-row.capcut .skills-col {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ====== Các phần khác giữ nguyên ====== */
+section {margin-top:20px;padding:16px 28px 0;}
+section h3 {
+  font-size:15px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--red-main);
+  margin-bottom:8px;
+  font-weight:700;
+}
+.experience-item,.education-item {margin-bottom:10px;}
+.experience-item h4,.education-item h4 {
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.meta {font-size:11px;color:#777;margin-bottom:2px;}
+ul {font-size:11.5px;padding-left:18px;color:#555;}
+
+.double-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:8px;
+}
+.double-grid img {
+  width:100%;
+  display:block;
+  border-radius:4px;
+  border:1px solid var(--line-grey);
+}
+
+.thank-image {margin-top:26px;text-align:center;}
+.thank-image img {max-width:100%;height:auto;display:inline-block;}
+
+.portfolio-shell {max-width:1550px;margin:26px auto 0;}
+.portfolio-inner {
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,0.12);
+  padding:20px 32px 28px;
+}
+.portfolio-inner h3 {
+  font-size:15px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--red-main);
+  margin-bottom:6px;
+  font-weight:700;
+}
+.portfolio-note {font-size:11px;color:#777;margin-bottom:12px;}
+
+.portfolio-card {
+  background:var(--milk-bg);
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line-grey);
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.portfolio-card img {width:100%;display:block;}
+.portfolio-card:hover {
+  transform:translateY(-3px);
+  box-shadow:0 5px 14px rgba(0,0,0,0.18);
+  border-color:#c0b7a5;
+}
+.portfolio-caption {font-size:11px;text-align:center;padding:6px 8px 8px;}
+
+.portfolio-row-1 {display:grid;grid-template-columns:1fr;margin-bottom:16px;}
+.portfolio-row-2 {display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;}
+.portfolio-row-3 {display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;}
+.portfolio-row-4 {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;     /* canh giữa màn hình */
+  justify-content: center; /* canh giữa màn hình */
+  padding: 24px;
+  z-index: 999;
+  overflow: hidden;        /* không scroll trang */
+}
+
+.modal.open { display: flex; }
+
+.modal-img {
+  max-width: 90vw;   /* tối đa 90% chiều rộng viewport */
+  max-height: 90vh;  /* tối đa 90% chiều cao viewport */
+  width: auto;       /* giữ tỉ lệ gốc */
+  height: auto;      /* giữ tỉ lệ gốc */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.modal-close {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 300;
+  z-index: 1000;
+}
+
+@media(max-width:1024px){
+  .container{flex-direction:column;}
+  .left,.right{width:100%;}
+  .left{border-right:none;border-bottom:1px solid var(--line-grey);}
+  .portfolio-row-2,.portfolio-row-3{grid-template-columns:repeat(2,1fr);}
+  .portfolio-row-4{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .portfolio-row-2,.portfolio-row-3,.portfolio-row-4{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<style>
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 9999;
+}
+
+.language-switcher .flag {
+  width: 36px;       
+  height: 24px;      
+  object-fit: cover; 
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.language-switcher .flag:hover {
+  transform: scale(1.1);
+  border-color: #888;
+}
+</style>
+ <div class="language-switcher">
+
+    <img src="images/vn-flag.png" alt="Vietnamese" class="flag" data-lang="vi">
+    <img src="images/uk-flag.png" alt="English" class="flag" data-lang="en">
+  </div>
+<div class="page">
+  <div class="cv-inner">
+
+    <!-- HEADER -->
+    <div class="container">
+   <div class="left">
+        <img src="images/avatar-small.jpg" alt="Profile Photo">
+      </div>
+      <div class="right">
+    <h1 data-i18n data-vi="Xin chào, hãy gọi tôi" data-en="Hello, you can call me">Xin chào, hãy gọi tôi</h1>
+    <div class="blue-text" data-i18n data-vi="SNOW WHITE" data-en="SNOW WHITE">SNOW WHITE</div>
+    <div class="name-red" data-i18n 
+         data-vi="aka Hồ Thị Bạch Tuyết<br>Chuyên Viên thiết kế đồ họa" 
+         data-en="aka Ho Thi Bach Tuyet<br>GRAPHIC DESIGNER">
+      aka Hồ Thị Bạch Tuyết<br>GRAPHIC DESIGNER
+    </div>
+       <div class="info-box">
+      <div class="icon">♀</div>
+      <div data-i18n data-vi="Nữ" data-en="Female">Female</div>
+    </div>
+
+    <div class="info-box">
+      <div class="icon">📞</div>
+      <div data-i18n data-vi="0903 6129 77" data-en="0903 6129 77">0903 6129 77</div>
+    </div>
+
+    <div class="info-box">
+      <div class="icon">@</div>
+      <div data-i18n data-vi="hotuyetbach9921@gmail.com" data-en="hotuyetbach9921@gmail.com">hotuyetbach9921@gmail.com</div>
+    </div>
+
+    <div class="info-box">
+      <div class="icon">🎂</div>
+      <div data-i18n data-vi="28/08/1977" data-en="28/08/1977">28/08/1977</div>
+    </div>
+
+    <div class="info-box">
+      <div class="icon">📍</div>
+      <div data-i18n 
+           data-vi="31/18/6 Đường Lê Văn Sỹ, Phường Nhiêu Lộc,Thành phố HCM, Vietnam" 
+           data-en="31/18/6 Le Van Sy Street, Nhieu Loc Ward,Ho Chi Minh City, Vietnam">
+        31/18/6 Le Van Sy Street, Nhieu Loc Ward,<br>Ho Chi Minh City, Vietnam
+      </div>
+    </div>
+
+    <!-- Mô tả -->
+    <div class="description" 
+         data-i18n 
+         data-vi="Với hơn 10 năm kinh nghiệm trong lĩnh vực quảng cáo và thiết kế đồ họa, tôi tự tin rằng sự sáng tạo, kỹ năng chuyên môn và kiến thức ngành của mình sẽ mang lại những đóng góp giá trị cho công ty của bạn."  
+         data-en="With more than 10 years of experience in advertising and graphic design, I am confident that my creativity, professional skills, and industry knowledge will bring valuable contributions to your company.">
+     Với hơn 10 năm kinh nghiệm trong lĩnh vực quảng cáo và thiết kế đồ họa, tôi tự tin rằng sự sáng tạo, kỹ năng chuyên môn và kiến thức ngành của mình sẽ mang lại những đóng góp giá trị cho công ty của bạn.
+    </div>
+  </div>
+</div>
+
+    <!-- ========= SKILLS ========= -->
+    <div class="skills-block">
+
+      <!-- Hàng chữ trên -->
+      <div class="skills-row labels">
+        <div class="skills-col left">Main</div>
+        <div class="skills-col center">Most frequently used and experienced</div>
+        <div class="skills-col right">Less experienced</div>
+      </div>
+
+      <!-- Hàng icon Ps / Ai / Id / Pr -->
+      <div class="skills-row icons">
+        <div class="skills-col left"></div>
+
+        <div class="skills-col center">
+          <div class="skills-logo">
+            <img src="images/logo-ps.png" alt="Adobe Photoshop">
+            <img src="images/logo-ai.png" alt="Adobe Illustrator">
+            <img src="images/logo-id.png" alt="Adobe InDesign">
+          </div>
+        </div>
+
+        <div class="skills-col right">
+          <div class="skills-pr">
+            <img src="images/logo-pr.png" alt="Adobe Premiere">
+          </div>
+        </div>
+      </div>
+
+      <!-- Hàng chữ Outdated / Used but outdated -->
+      <div class="skills-row sub-labels">
+        <div class="skills-col left">Outdated</div>
+        <div class="skills-col center">Used but outdated</div>
+        <div class="skills-col right"></div>
+      </div>
+
+      <!-- Hàng CapCut -->
+      <div class="skills-row capcut">
+        <div class="skills-col left"></div>
+        <div class="skills-col center">
+          <div class="skills-capcut">
+            <img src="images/logo-capcut.png" alt="CapCut">
+          </div>
+        </div>
+        <div class="skills-col right"></div>
+      </div>
+
+    </div>
+
+  
+
+<div>
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h3 data-i18n data-vi="Kinh nghiệm" data-en="Experience">Experience</h3>
+
+<div class="experience-item">
+  <h4 data-i18n 
+      data-vi="Chuyên viên thiết kế – Fuji Smart / Dr.Nước"
+      data-en="Graphic Designer – Fuji Smart / Dr.Nuoc">
+    Graphic Designer – Fuji Smart / Dr.Nước
+  </h4>
+  <div class="meta" data-i18n 
+       data-vi="2019 – Nay "
+       data-en="2019 – Now ">
+    2019 – Nay · Thành phố Hồ Chí Minh
+  </div>
+  <ul>
+    <li data-i18n 
+        data-vi="Thiết kế key visual cho các chiến dịch marketing (Tết, 20/10, 27/2, Valentine,…)."
+        data-en="Designed key visuals for marketing campaigns (Tet, 20/10, 27/2, Valentine…).">
+      Thiết kế key visual cho các chiến dịch marketing (Tết, 20/10, 27/2, Valentine,…).
+    </li>
+    <li data-i18n 
+        data-vi="Thiết kế poster, banner, POSM, social post cho máy lọc nước và thiết bị chăm sóc sức khỏe."
+        data-en="Created posters, banners, POSM, and social media posts for water purifiers and healthcare devices.">
+      Thiết kế poster, banner, POSM, social post cho máy lọc nước và thiết bị chăm sóc sức khỏe.
+    </li>
+    <li data-i18n 
+        data-vi="Phối hợp với Content &amp; Sales giúp hình ảnh đồng nhất với định vị thương hiệu."
+        data-en="Collaborated with Content & Sales teams to maintain consistent brand imagery.">
+      Phối hợp với Content &amp; Sales giúp hình ảnh đồng nhất với định vị thương hiệu.
+    </li>
+  </ul>
+</div>
+
+    <div class="experience-item">
+  <h4 data-i18n 
+      data-vi="Thiết kế đồ họa – Trung Nguyen CO., LTD"
+      data-en="Graphic Designer – Trung Nguyen CO., LTD">
+    Graphic Designer – Trung Nguyen CO., LTD
+  </h4>
+  <div class="meta" data-i18n 
+       data-vi="2010 – 2013"
+       data-en="2010 – 2013">
+    2010 – 2013
+  </div>
+  <ul>
+    <li data-i18n 
+        data-vi="Thiết kế catalogue, leaflet, banner, standee, tờ rơi quảng cáo."
+        data-en="Designed catalogues, leaflets, banners, standees, and flyers.">
+      Thiết kế catalogue, leaflet, banner, standee, tờ rơi quảng cáo.
+    </li>
+    <li data-i18n 
+        data-vi="Retouch ảnh sản phẩm, xử lý màu cho in ấn."
+        data-en="Retouched product images and adjusted colors for printing.">
+      Retouch ảnh sản phẩm, xử lý màu cho in ấn.
+    </li>
+  </ul>
+</div>   
+
+<div class="experience-item">
+  <h4 data-i18n 
+      data-vi="Thiết kế đồ họa Designer – Các dự án khác"
+      data-en="Graphic Designer – Other Projects">
+    Graphic Designer – Các dự án khác
+  </h4>
+  <div class="meta" data-i18n 
+       data-vi="2000 – 2019"
+       data-en="2000 – 2019">
+    2000 – 2019
+  </div>
+  <ul>
+    <li data-i18n 
+        data-vi="Thiết kế logo, name card, bộ nhận diện đơn giản cho khách hàng SME."
+        data-en="Designed logos, name cards, and simple branding for SME clients.">
+      Thiết kế logo, name card, bộ nhận diện đơn giản cho khách hàng SME.
+    </li>
+    <li data-i18n 
+        data-vi="Tham gia thiết kế cho các sự kiện & truyền thông nội bộ."
+        data-en="Participated in design for events and internal communications.">
+      Tham gia thiết kế cho các sự kiện & truyền thông nội bộ.
+    </li>
+  </ul>
+</div>
+        
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <h3 data-i18n data-vi="Học vấn" data-en="Education">Education</h3>
+       
+<div class="education-item">
+  <h4 data-i18n 
+      data-vi="Thiết kế đồ họa; Nội thất – Training Center / College"
+      data-en="Graphic Design; Interior Design – Training Center / College">
+    Graphic Design – Training Center / College
+  </h4>
+  <div class="meta" data-i18n 
+       data-vi="Ho Chi Minh City"
+       data-en="Ho Chi Minh City">
+    Ho Chi Minh City
+  </div>
+  <ul>
+    <li data-i18n 
+        data-vi="Chuyên ngành thiết kế đồ họa, dàn trang, in ấn."
+        data-en="Major in graphic design, layout, and printing.">
+      Chuyên ngành thiết kế đồ họa, dàn trang, in ấn.
+    </li>
+    <li data-i18n 
+        data-vi="Kỹ năng: Photoshop, Illustrator, InDesign, 3Dmax, CapCut,…"
+        data-en="Skills: Photoshop, Illustrator, InDesign, 3Dmax, CapCut,…">
+      Kỹ năng: Photoshop, Illustrator, InDesign, Canva, CapCut,…
+    </li>
+  </ul>
+</div>
+
+      </section>
+
+    <!-- DÒNG 2 -->
+    <div class="portfolio-row-2">
+      <div class="portfolio-card"><img src="images/p2-thumb.jpg" data-full="images/p2-full.jpg" alt=""><div class="portfolio-caption">2023</div></div>
+      <div class="portfolio-card"><img src="images/p3-thumb.jpg" data-full="images/p3-full.jpg" alt=""><div class="portfolio-caption">2023-02</div></div>
+      <div class="portfolio-card"><img src="images/p4-thumb.jpg" data-full="images/p4-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p5-thumb.jpg" data-full="images/p5-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+    </div>
+
+    <!-- DÒNG 3 -->
+    <div class="portfolio-row-3">
+      <div class="portfolio-card"><img src="images/p6-thumb.jpg" data-full="images/p6-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p7-thumb.jpg" data-full="images/p7-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p8-thumb.jpg" data-full="images/p8-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p9-thumb.jpg" data-full="images/p9-full.jpg" alt=""><div class="portfolio-caption">2023 </div></div>
+    </div>
+
+    <!-- DÒNG 4 -->
+    <div class="portfolio-row-4">
+      <div class="portfolio-card"><img src="images/p10-thumb.jpg" data-full="images/p10-full.Gif" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p11-thumb.jpg" data-full="images/p11-full.Gif" alt=""><div class="portfolio-caption">2023 </div></div>
+      <div class="portfolio-card"><img src="images/p12-thumb.jpg" data-full="images/p12-full.Gif" alt=""><div class="portfolio-caption">2025 </div></div>
+    </div>
+  </div>
+
+<!-- CERTIFICATES -->
+      <section id="certificates">
+        <h3 data-i18n data-vi="Brochure – Tờ rơi" data-en="Brochure – Flyer">Brochure – Flyer</h3>
+        <div class="double-grid">
+          <img src="images/cert-1.gif" alt="2024" />
+          <img src="images/cert-2.gif" alt="2024" />
+        </div>
+      </section>
+
+      <!-- BUSINESS CARDS -->
+      <section id="cards">
+       <h3 data-i18n data-vi="Brochure – Tờ rơi" data-en="Brochure – Flyer">Brochure – Flyer</h3>
+        <div class="double-grid">
+          <img src="images/cert-3.gif" alt="2024" />
+          <img src="images/cert-4.gif" alt="2024" />
+        </div>
+      </section>
+
+
+
+      <!-- HÌNH THANK YOU  -->
+      <div class="thank-image">
+        <img src="images/thank-you.jpg" alt="Thank you – Design by Tuyet" />
+      </div>
+    </div>
+</div>
+
+<!-- FEATURED PROJECTS -->
+<div class="portfolio-section">
+  <h3 data-i18n data-vi="Dự án nổi bật" data-en="Featured Projects">Featured Projects</h3>
+  <p>
+    <span data-i18n data-vi="Xem thêm các thiết kế bao bì →" data-en="See more packaging designs →">
+      See more packaging designs →
+    </span>
+    <a href="product.html" target="_blank">See packaging designs →</a>
+  </p>
+</div>
+
+</div> <!-- Kết thúc portfolio-inner -->
+</div> <!-- Kết thúc portfolio-shell -->
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="modal-close" id="modal-close">&times;</span>
+  <img class="modal-img" id="modal-img" src="" alt="Xem hình lớn">
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+const modalClose = document.getElementById('modal-close');
+
+document.querySelectorAll('.portfolio-card img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    modal.classList.add('open');
+    modalImg.src=img.dataset.full||img.src;
+  });
+});
+
+modalClose.addEventListener('click',()=>{
+  modal.classList.remove('open');
+  modalImg.src='';
+});
+
+modal.addEventListener('click',(e)=>{
+  if(e.target===modal){
+    modal.classList.remove('open');
+    modalImg.src='';
+  }
+});
+
+</script>
+
+  </div>
+</div>
+<script>
+const flags = document.querySelectorAll('.language-switcher .flag');
+
+flags.forEach(flag => {
+  flag.addEventListener('click', () => {
+    const lang = flag.dataset.lang; // 'vi' hoặc 'en'
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if(lang === 'vi') el.innerHTML = el.dataset.vi;
+      if(lang === 'en') el.innerHTML = el.dataset.en;
+    });
+  });
+});
+</script>
+</body>
+</html>
