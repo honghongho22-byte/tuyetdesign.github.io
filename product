@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Packaging Designs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --red-main: #e30613;
+      --milk-bg: #f7f3ea;
+      --line-grey: #dedede;
+      --grey-bg: #f1f1f1;
+      --text-main: #333333;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background: var(--grey-bg);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .portfolio-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .portfolio-section { text-align: center; margin: 40px 0; }
+    .portfolio-section h3 { font-size: 2rem; margin-bottom: 15px; color: var(--red-main); }
+
+    .portfolio-title-banner {
+      background-color: var(--red-main);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    /* ===== Dòng 1 – 5 logo ===== */
+    .portfolio-row-first {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Các dòng sản phẩm ===== */
+    .portfolio-row {
+      margin-bottom: 40px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .portfolio-card {
+      background: var(--milk-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--line-grey);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      display: block;
+      transition: transform .2s ease;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Hình Thank you */
+    .thank-image { text-align: center; margin-top: 40px; }
+    .thank-image img { max-width: 100%; height: auto; border-radius: 8px; }
+
+    /* Link về CV */
+    .back-cv { margin-top: 20px; display: block; text-align: center; font-size: 1rem; }
+    .back-cv a { color: #007BFF; text-decoration: underline; }
+
+    /* ========== MODAL PHÓNG TO HÌNH ========== */
+    .img-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;           /* Ẩn mặc định */
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .img-modal.open {
+      display: flex;           /* Hiện modal khi mở */
+    }
+
+    .img-modal img {
+      max-width: 90vw;         /* Không tràn ngang */
+      max-height: 90vh;        /* Không tràn dọc */
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      background: #000;
+    }
+
+    .img-modal-close {
+      position: fixed;
+      top: 15px;
+      right: 25px;
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    /* Responsive nhẹ */
+    @media (max-width: 992px) {
+      .portfolio-row-first { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-row-first { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-row-first,
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portfolio-container">
+
+    <!-- Tiêu đề trang -->
+    <div class="portfolio-section">
+      <h3>Dự án nổi bật – Packaging Designs</h3>
+    </div>
+
+    <!-- Dòng 1 – 5 logo (demo + full) -->
+    <div class="portfolio-row-first">
+      <div class="portfolio-card">
+        <img src="images/logo1-thumb.jpg" data-full="images/logo1-full.jpg" alt="Logo 1">
+      </div>
+      <div class="portfolio-card">
+        <img src="images/logo2-thumb.jpg" data-full="images/logo2-full.jpg" alt="Logo 2">
+      </div>
+      <div class="portfolio-card">
+        <img src="images/logo3-thumb.jpg" data-full="images/logo3-full.jpg" alt="Logo 3">
+      </div>
+      <div class="portfolio-card">
+        <img src="images/logo4-thumb.jpg" data-full="images/logo4-full.jpg" alt="Logo 4">
+      </div>
+      <div class="portfolio-card">
+        <img src="images/logo5-thumb.jpg" data-full="images/logo5-full.jpg" alt="Logo 5">
+      </div>
+    </div>
+
+    <!-- Dòng sản phẩm 1 – Thùng bột giặt -->
+    <div class="portfolio-row">
+      <div class="portfolio-title-banner">Thùng bột giặt</div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/product1-thumb.jpg" data-full="images/product1-full.jpg" alt="Product 1">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product2-thumb.jpg" data-full="images/product2-full.jpg" alt="Product 2">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product3-thumb.jpg" data-full="images/product3-full.jpg" alt="Product 3">
+        </div>
+        <div class="portfolio-card">
+      <img src="images/product4-thumb.jpg" data-full="images/product4-full.jpg" alt="Product 3">
+        </div>
+      </div>
+    </div>
+
+    <!-- Dòng sản phẩm 2 – Chai xịt thơm -->
+    <div class="portfolio-row">
+      <div class="portfolio-title-banner">Chai xịt thơm</div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/product5-thumb.jpg" data-full="images/product5-full.jpg" alt="Product 5">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product6-thumb.jpg" data-full="images/product6-full.jpg" alt="Product 6">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product7-thumb.jpg" data-full="images/product7-full.jpg" alt="Product 7">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product8-thumb.jpg" data-full="images/product8-full.jpg" alt="Product 8">
+        </div>
+      </div>
+    </div>
+
+    <!-- Dòng sản phẩm 3 – Viên giặt xả -->
+    <div class="portfolio-row">
+      <div class="portfolio-title-banner">Viên giặt xả</div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/product9-thumb.jpg" data-full="images/product9-full.jpg" alt="Product 9">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product10-thumb.jpg" data-full="images/product10-full.jpg" alt="Product 10">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product11-thumb.jpg" data-full="images/product11-full.jpg" alt="Product 11">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product12-thumb.jpg" data-full="images/product12-full.jpg" alt="Product 12">
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Dòng sản phẩm 4 – Bột giặt túi -->
+    <div class="portfolio-row">
+      <div class="portfolio-title-banner">Bột giặt túi</div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/product13-thumb.jpg" data-full="images/product13-full.jpg" alt="Product 13">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product14-thumb.jpg" data-full="images/product14-full.jpg" alt="Product 14">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product15-thumb.jpg" data-full="images/product15-full.jpg" alt="Product 15">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product16-thumb.jpg" data-full="images/product16-full.jpg" alt="Product 16">
+        </div>
+      </div>
+    </div>
+
+    <!-- Dòng sản phẩm 5 – Bột giặt nước -->
+    <div class="portfolio-row">
+      <div class="portfolio-title-banner">Bột giặt nước</div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/product17-thumb.jpg" data-full="images/product17-full.jpg" alt="Product 17">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product18-thumb.jpg" data-full="images/product18-full.jpg" alt="Product 18">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product19-thumb.jpg" data-full="images/product19-full.jpg" alt="Product 19">
+        </div>
+        <div class="portfolio-card">
+          <img src="images/product20-thumb.jpg" data-full="images/product20-full.jpg" alt="Product 20">
+        </div>
+      </div>
+    </div>
+
+    <!-- Hình Thank You -->
+    <div class="thank-image">
+      <img src="images/thank-you.jpg" alt="Thank you">
+    </div>
+
+    <!-- Link về CV -->
+    <div class="back-cv">
+      <a href="index.html">Quay lại trang CV</a>
+    </div>
+
+  </div> <!-- end portfolio-container -->
+
+  <!-- ===== Modal phóng to ảnh ===== -->
+  <div class="img-modal" id="imgModal">
+    <span class="img-modal-close" id="imgModalClose">&times;</span>
+    <img id="imgModalContent" src="" alt="Xem ảnh lớn">
+  </div>
+
+  <script>
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgModalContent');
+    const modalClose = document.getElementById('imgModalClose');
+
+    // Gắn sự kiện click cho TẤT CẢ hình trong .portfolio-card
+    document.querySelectorAll('.portfolio-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        const fullSrc = img.dataset.full || img.src; // ưu tiên hình full, nếu không có thì dùng hình hiện tại
+        modal.classList.add('open');
+        modalImg.src = fullSrc;
+      });
+    });
+
+    // Đóng khi bấm vào nút X
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('open');
+      modalImg.src = '';
+    });
+
+    // Đóng khi click ra ngoài ảnh
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        modalImg.src = '';
+      }
+    });
+
+    // Đóng khi nhấn phím ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        modal.classList.remove('open');
+        modalImg.src = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
